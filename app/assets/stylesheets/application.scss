@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
+@import 'bootstrap';
+
+
+.authentication {
+  height: 100vh;
+
+  .row {
+    height: inherit;
+  }
+
+  &-left {
+    height: inherit;
+  }
+
+  &-right {
+    height: inherit;
+  }
+}
+
+.authentication-left {
+  background-image: image-url("../assets/twitter_banner.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

@@ -58,3 +58,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # for user authentication and authorization
 gem 'devise', '~> 4.7', '>= 4.7.3'
+
+# bootstrap for frontend styling
+gem 'bootstrap', '~> 4.6'
