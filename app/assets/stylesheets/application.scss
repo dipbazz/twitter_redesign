@@ -16,9 +16,16 @@
 
 @import 'bootstrap';
 
+.btn {
+  border-radius: 100px;
+}
 
 .authentication {
-  height: 100vh;
+  height: 50vh;
+
+  @media screen and (min-width: 768px) {
+    height: 100vh;
+  }
 
   .row {
     height: inherit;
@@ -26,6 +33,17 @@
 
   &-left {
     height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background: url('https://api.iconify.design/akar-icons:twitter-fill.svg?color=white') no-repeat center center / contain;      height: 25rem;
+      width: 25rem;
+    }
   }
 
   &-right {
@@ -38,4 +56,29 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.authentication-form {
+  .form-label {
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.2s all;
+    padding-left: 0.75rem;
+  }
+
+  .form-control {
+    height: unset;
+    padding-top: 1.8rem;
+    border-width: 2px;
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &:focus ~ .form-label,
+    &:valid ~ .form-label {
+      top: 5px;
+      transform: none;
+    }
+  }
 }
