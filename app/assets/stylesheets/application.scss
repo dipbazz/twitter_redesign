@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+$theme-colors: (
+  "primary": #39a2f2
+);
 
 @import 'bootstrap';
 
@@ -39,10 +42,12 @@
     position: relative;
 
     &::before {
-      content: '';
+      content: '\f099';
       position: absolute;
-      background: url('https://api.iconify.design/akar-icons:twitter-fill.svg?color=white') no-repeat center center / contain;      height: 25rem;
-      width: 25rem;
+      font-family:  "Font Awesome 5 Brands";
+      font-weight: 400;
+      font-size: 25rem;
+      color: #fff;
     }
   }
 
@@ -80,5 +85,48 @@
       top: 5px;
       transform: none;
     }
+  }
+}
+
+// header and navbar styles
+.header {
+  height: 100vh;
+}
+.nav-link {
+  font-size: 1.2rem;
+  display: flex;
+
+  &:not(.active) {
+    color: #424040;
+  }
+
+  .icon {
+    font-size: 1.4rem;
+
+    &.fa-lg {
+      font-size: 1.9rem;
+    }
+  }
+}
+
+.dropup {
+  .dropdown-toggle{
+    &:after {
+      display: none;
+    }
+  }
+
+  .usr-img {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 100px;
+  }
+
+  .dropdown-menu.show {
+    display: block;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
   }
 }

@@ -8,10 +8,27 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "https://kit.fontawesome.com/fcf9201011.js" %>
   </head>
 
   <body>
 
-    <%= yield %>
+    <% if user_signed_in? %>
+      <div class="container">
+        <div class="row">
+            <div class="col-sm-2 col-xl-3 border">
+              <%= render 'layouts/header' %>
+            </div>
+            <div class="col-sm-10 col-lg-6 col-xl-5 border">
+              <%= yield %>
+            </div>
+            <div class="col-lg-4 col-xl-4 border">
+              <%= render 'layouts/follow' %>
+            </div>
+        </div>
+      </div>
+    <% else %>
+      <%= yield %>
+    <% end %>
   </body>
 </html>

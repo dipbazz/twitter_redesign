@@ -8,7 +8,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
-import '@iconify/iconify';
+import 'bootstrap'
 
 Rails.start()
 Turbolinks.start()
