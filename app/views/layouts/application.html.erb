@@ -16,14 +16,18 @@
     <% if user_signed_in? %>
       <div class="container">
         <div class="row">
-            <div class="col-sm-2 col-xl-3 border">
-              <%= render 'layouts/header' %>
+            <div class="col-sm-2 col-xl-3 position-relative">
+              <div class="position-fixed z-index-10">
+                <%= render 'layouts/header' %>
+              </div>
             </div>
             <div class="col-sm-10 col-lg-6 col-xl-5 border">
               <%= yield %>
             </div>
-            <div class="col-lg-4 col-xl-4 border">
-              <%= render 'layouts/follow' %>
+            <div class="col-lg-4 col-xl-4 border position-relative">
+              <div class="position-fixed z-index-10">
+                <%= render 'layouts/follow' %>
+              </div>
             </div>
         </div>
       </div>

@@ -1,64 +1,65 @@
-<header class="header d-flex flex-column justify-content-between">
+<header class="header d-flex flex-column justify-content-between pb-3">
   <nav class="">
 
     <div class=" " id="navbarSupportedContent">
       <ul class="nav flex-column">
         <li class="nav-item my-2">
-          <a class="nav-link font-weight-bold text-primary" href="#">
+          <a class="nav-link font-weight-bold text-primary" href="/">
             <i class="icon fab fa-twitter fa-lg"></i>
           </a>
         </li>
         <li class="nav-item my-2">
           <a class="nav-link font-weight-bold active" href="#">
             <i class="icon pr-4 fas fa-home"></i>
-            <span class="link-text">Home</span>
+            <span class="link-text d-none d-xl-inline-block">Home</span>
           </a>
         </li>
         <li class="nav-item my-2">
           <a class="nav-link font-weight-bold" href="#">
             <i class="icon pr-4 fas fa-hashtag"></i>
-            <span class="link-text">Explore</span>
+            <span class="link-text d-none d-xl-inline-block">Explore</span>
           </a>
         </li>
         <li class="nav-item my-2">
           <a class="nav-link font-weight-bold" href="#">
             <i class="icon pr-4 far fa-bell"></i>
-            <span class="link-text">Notifications</span>
+            <span class="link-text d-none d-xl-inline-block">Notifications</span>
           </a>
         </li>
         <li class="nav-item my-2">
           <a class="nav-link font-weight-bold" href="#">
             <i class="icon pr-4 far fa-envelope"></i>
-            <span class="link-text">Messages</span>
+            <span class="link-text d-none d-xl-inline-block">Messages</span>
           </a>
         </li>
         <li class="nav-item my-2">
           <a class="nav-link font-weight-bold" href="#">
             <i class="icon pr-4 far fa-bookmark"></i>
-            <span class="link-text">Bookmark</span>
+            <span class="link-text d-none d-xl-inline-block">Bookmark</span>
           </a>
         </li>
         <li class="nav-item my-2">
           <a class="nav-link font-weight-bold" href="#">
             <i class="icon pr-4 far fa-list-alt"></i>
-            <span class="link-text">Lists</span>
+            <span class="link-text d-none d-xl-inline-block">Lists</span>
           </a>
         </li>
         <li class="nav-item my-2">
           <a class="nav-link font-weight-bold" href="#">
             <i class="icon pr-4 far fa-user"></i>
-            <span class="link-text">Profile</span>
+            <span class="link-text d-none d-xl-inline-block">Profile</span>
           </a>
         </li>
         <li class="nav-item my-2">
           <a class="nav-link font-weight-bold" href="#">
             <i class="icon pr-4 fas fa-ellipsis-h"></i>
-            <span class="link-text">More</span>
+            <span class="link-text d-none d-xl-inline-block">More</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="btn btn-primary w-100 font-weight-bold py-2" href="#">
-            <span>Tweet</span>
+          <a class="btn btn-primary px-xl-5 font-weight-bold py-2" href="#">
+            <i class="fas fa-pen-fancy d-xl-none"></i>
+            <span class="d-none d-xl-block px-xl-4">Tweet</span>
           </a>
         </li>
       </ul>
@@ -67,14 +68,14 @@
 
   <div class="dropup">
     <a href="#" class="dropdown-toggle d-flex justify-content-between align-items-center" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <div class="d-flex align-items-center">
+      <div class="d-flex align-items-center mr-4">
         <img src="https://via.placeholder.com/300" alt="user image" class="usr-img d-inline-block mr-3">
-        <div>
+        <div class="d-none d-xl-inline-block">
           <span class="d-block name text-dark font-weight-bold"><%= current_user.full_name %></span>
           <span class="username text-muted">@<%= current_user.username %></span>
         </div>
       </div>
-      <i class="fas fa-ellipsis-h"></i>
+      <i class="fas fa-ellipsis-h d-none d-xl-inline-block"></i>
     </a>
     <div class="dropdown-menu dropdown" aria-labelledby="dropdownMenuButton">
       <div class="d-flex align-items-center dropdown-item">
@@ -87,7 +88,6 @@
       <div class="dropdown-divider"></div>
       <%= link_to(destroy_user_session_path, method: :delete, class: "dropdown-item py-2") do %>
         <span>Logout @<%= current_user.username %></span>
-        <i class="fas fa-sign-out-alt"></i>
       <% end %>
     </div>
   </div>
