@@ -27,6 +27,10 @@ $theme-colors: (
   z-index: 10;
 }
 
+.card-link {
+  color: #3e4a50;
+}
+
 .authentication {
   height: 50vh;
 
@@ -128,9 +132,34 @@ $theme-colors: (
   }
 
   .dropdown-menu.show {
-    display: block;
-    border: none;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
   }
+}
+
+.dropdown-menu.show {
+  display: block;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.dropleft {
+  .dropdown-toggle{
+    &:before {
+      display: none;
+    }
+  }
+}
+// main content styles
+.main-nav {
+  top: 0;
+}
+
+.tweet-usr-img {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+}
+
+.tweet-input {
+  outline: none;
 }
