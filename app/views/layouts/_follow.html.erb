@@ -1,1 +1,21 @@
-<h3>follow users</h3>
+<form action="#" class="search-form mb-3">
+  <div class="position-relative">
+    <input type="search" placeholder="search opinions" id="search" class="pl-5 py-2 search-input w-100">
+    <label for="search" class="position-absolute search-label">
+      <i class="fas fa-search"></i>
+    </label>
+  </div>
+</form>
+
+<div class="my-2 following-list">
+
+  <ul class="list-group list-group-flush ">
+    <li class="list-group-item">
+      <h5 class="font-weight-bold mb-0">who to follow</h5>
+    </li>
+
+    <% users_to_follow.each do |user| %>
+      <%= render 'layouts/user_to_follow', user: user %>
+    <% end %>
+  </ul>
+</div>

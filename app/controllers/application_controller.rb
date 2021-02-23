@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+  helper_method :users_to_follow
 
   protected
 
@@ -8,5 +9,11 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
     devise_parameter_sanitizer.permit :sign_in, keys: [:username, :password]
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs
+  end
+
+  private
+
+  def users_to_follow
+    @_users_to_follow ||= User.all
   end
 end

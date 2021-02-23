@@ -6,10 +6,6 @@ class OpinionsController < ApplicationController
     @opinion = Opinion.new
   end
 
-  def new
-    @opinion = Opinion.new
-  end
-
   def create
     @opinion = current_user.opinions.build(opinion_params)
 

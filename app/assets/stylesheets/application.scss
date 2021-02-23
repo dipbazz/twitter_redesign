@@ -17,6 +17,8 @@ $theme-colors: (
   "primary": #39a2f2
 );
 
+$light-gray : #f7f9fa;
+
 @import 'bootstrap';
 
 .btn {
@@ -27,11 +29,15 @@ $theme-colors: (
   z-index: 10;
 }
 
+.card:hover {
+  background-color: #fafafa;
+}
+
 .card-link {
   color: #3e4a50;
 }
 
-.alert.position-absolute {
+.alert.position-fixed {
   left: 0;
   top: 0;
   right: 0;
@@ -169,4 +175,41 @@ $theme-colors: (
 
 .tweet-input {
   outline: none;
+}
+
+// who to follow section
+.search-form {
+  .search-input {
+    border: none;
+    background-color: darken($light-gray, 5);
+    border-radius: 100px;
+    border: 1px solid transparent;
+
+    &:focus {
+      outline: none;
+      border: 1px solid map-get($theme-colors, primary);
+
+      ~ .search-label {
+        color: map-get($theme-colors, primary)
+      }
+    }
+  }
+
+  .search-label {
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: gray;
+  }
+}
+
+.following-list {
+  .list-group {
+    border-radius: 15px;
+  }
+
+  .list-group-item {
+    background-color: $light-gray;
+    padding: 0.8rem;
+  }
 }
