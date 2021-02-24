@@ -2,7 +2,7 @@ class OpinionsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @opinions = Opinion.all
+    @opinions = Opinion.all.order('created_at DESC')
     @opinion = Opinion.new
   end
 
