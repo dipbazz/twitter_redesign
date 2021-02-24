@@ -1,19 +1,17 @@
 module ApplicationHelper
   def alert_class
-    if flash[:notice]
-      return "alert-success"
-    elsif flash[:alert]
-      return "alert-danger"
-    end
+    return 'alert-success' if flash[:notice]
 
-    "d-none"
+    return 'alert-danger' if flash[:alert]
+
+    'd-none'
   end
 
   def alert_message
     if flash[:notice]
-      return content_tag :span, flash[:notice]
+      content_tag :span, flash[:notice]
     elsif flash[:alert]
-      return content_tag :span, flash[:alert]
+      content_tag :span, flash[:alert]
     end
   end
 

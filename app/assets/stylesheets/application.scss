@@ -61,11 +61,15 @@ $light-gray : #f7f9fa;
     justify-content: center;
     align-items: center;
     position: relative;
+    background-image: image-url("../assets/twitter_banner.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
     &::before {
       content: '\f099';
       position: absolute;
-      font-family:  "Font Awesome 5 Brands";
+      font-family: "Font Awesome 5 Brands", sans-serif;
       font-weight: 400;
       font-size: 25rem;
       color: #fff;
@@ -75,13 +79,6 @@ $light-gray : #f7f9fa;
   &-right {
     height: inherit;
   }
-}
-
-.authentication-left {
-  background-image: image-url("../assets/twitter_banner.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .authentication-form {
@@ -113,6 +110,7 @@ $light-gray : #f7f9fa;
 .header {
   height: 100vh;
 }
+
 .nav-link {
   font-size: 1.2rem;
   display: flex;
@@ -130,9 +128,15 @@ $light-gray : #f7f9fa;
   }
 }
 
+.dropdown-menu.show {
+  display: block;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
 .dropup {
-  .dropdown-toggle{
-    &:after {
+  .dropdown-toggle {
+    &::after {
       display: none;
     }
   }
@@ -149,15 +153,9 @@ $light-gray : #f7f9fa;
   }
 }
 
-.dropdown-menu.show {
-  display: block;
-  border: none;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-}
-
 .dropleft {
-  .dropdown-toggle{
-    &:before {
+  .dropdown-toggle {
+    &::before {
       display: none;
     }
   }
@@ -179,8 +177,14 @@ $light-gray : #f7f9fa;
 
 // who to follow section
 .search-form {
+  .search-label {
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: gray;
+  }
+
   .search-input {
-    border: none;
     background-color: darken($light-gray, 5);
     border-radius: 100px;
     border: 1px solid transparent;
@@ -190,16 +194,9 @@ $light-gray : #f7f9fa;
       border: 1px solid map-get($theme-colors, primary);
 
       ~ .search-label {
-        color: map-get($theme-colors, primary)
+        color: map-get($theme-colors, primary);
       }
     }
-  }
-
-  .search-label {
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: gray;
   }
 }
 

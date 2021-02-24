@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @following.save
       flash[:notice] = "You are now following @#{user.username}."
     else
-      flash[:alert] = "Something went wrong while trying to follow the user."
+      flash[:alert] = 'Something went wrong while trying to follow the user.'
     end
 
     redirect_to opinions_path
@@ -18,11 +18,11 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     @following = current_user.followed_users.find_by(followed: user)
 
-    if @following.destroy
-      flash[:alert] = "You have unfollowed @#{user.username}."
-    else
-      flash[:alert] = "Something went wrong while trying to follow the user."
-    end
+    flash[:alert] = if @following.destroy
+                      "You have unfollowed @#{user.username}."
+                    else
+                      'Something went wrong while trying to follow the user.'
+                    end
 
     redirect_to opinions_path
   end
