@@ -16,7 +16,9 @@ module ApplicationHelper
   end
 
   def follow_user_link(user, options = {})
-    if current_user.follows?(user)
+    if current_user.id == user.id
+      link_to('Edit Profile', '#', **options)
+    elsif current_user.follows?(user)
       link_to('Unfollow', unfollow_user_path(user), method: :post, **options)
     else
       link_to('Follow', follow_user_path(user), method: :post, **options)

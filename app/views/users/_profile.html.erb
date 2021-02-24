@@ -1,0 +1,31 @@
+<div class="tweet-form border border-top-0 border-bottom-0 bg-white">
+
+  <div class="">
+    <div class="user-cover-img">
+    </div>
+
+    <div class="usr-profile p-3 position-relative">
+      <div class="clearfix">
+        <img src="https://via.placeholder.com/300" alt="user image" class="profile-img position-absolute">
+        <%= follow_user_link @user, class: "btn btn-outline-primary py-1 px-4 font-weight-bold float-right" %>
+      </div>
+
+      <div class="clearfix mt-4">
+        <div class="info">
+          <h5 class="mb-1"><%= @user.full_name %></h5>
+          <h6 class="text-muted">@<%= @user.username %></h6>
+        </div>
+        <div class="mt-3">
+          <a href="#" class="mr-3 text-dark">
+            <span class="font-weight-bold"><%= @user.follows.count %> </span>
+            <span class="text-muted">Following</span>
+          </a>
+          <a href="#" class=" text-dark">
+            <span class="font-weight-bold"><%= @user.followers.count %></span>
+            <span class="text-muted"> Followers</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

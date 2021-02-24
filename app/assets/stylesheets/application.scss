@@ -210,3 +210,50 @@ $light-gray : #f7f9fa;
     padding: 0.8rem;
   }
 }
+
+// profile section styles
+.user-cover-img {
+  height: 200px;
+  background-image: image-url('../assets/cover.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.profile-img {
+  height: 140px;
+  width: 140px;
+  object-fit: cover;
+  border: 5px solid #fff;
+  top: -70px;
+  border-radius: 100px;
+}
+
+.profile-content {
+  .nav-item {
+    flex: 1;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .nav-link {
+    border: none;
+    border-radius: 0;
+    margin-bottom: 0;
+    background: transparent;
+    font-size: 1rem;
+    font-weight: 500;
+    width: 100%;
+    justify-content: center;
+
+    &:hover {
+      background-color: rgba(map-get($theme-colors, primary), 0.1);
+      border-bottom: 2px solid rgba(map-get($theme-colors, primary), 0.1);
+      color: map-get($theme-colors, primary);
+    }
+
+    &.active {
+      border-bottom: 2px solid map-get($theme-colors, primary);
+      color: map-get($theme-colors, primary);
+    }
+  }
+}

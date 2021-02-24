@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :opinions, only: [:index, :create, :new]
-  resources :users do
+  resources :users, only: [:show] do
     post 'follow', on: :member
     post 'unfollow', on: :member
   end
