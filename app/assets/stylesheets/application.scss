@@ -21,6 +21,10 @@ $light-gray : #f7f9fa;
 
 @import 'bootstrap';
 
+.center-container {
+  min-height: 100vh;
+}
+
 .btn {
   border-radius: 100px;
 }
