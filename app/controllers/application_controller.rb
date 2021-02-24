@@ -14,6 +14,8 @@ class ApplicationController < ActionController::Base
   private
 
   def users_to_follow
-    @users_to_follow ||= User.where.not(id: current_user)
+    users_id = current_user.follows.pluck(:id)
+    users_id << current_user.id
+    @users_to_follow ||= User.where.not(id: users_id).order('created_at DESC')
   end
 end
