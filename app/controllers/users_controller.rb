@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       flash[:alert] = 'Something went wrong while trying to follow the user.'
     end
 
-    redirect_to opinions_path
+    redirect_to request.referrer
   end
 
   def unfollow
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
                       'Something went wrong while trying to follow the user.'
                     end
 
-    redirect_to opinions_path
+    redirect_to request.referrer
   end
 
   private
