@@ -14,19 +14,19 @@ class UsersController < ApplicationController
       flash[:alert] = 'Something went wrong while trying to follow the user.'
     end
 
-    redirect_to request.referrer
+    (request.referrer) ? (redirect_to request.referrer) : (redirect_to root_path)
   end
 
   def unfollow
     @following = current_user.followed_users.find_by(followed: @user)
 
-    flash[:alert] = if @following.destroy
+    flash[:alert] = if @following and @following.destroy
                       "You have unfollowed @#{@user.username}."
                     else
                       'Something went wrong while trying to unfollow the user.'
                     end
 
-    redirect_to request.referrer
+    (request.referrer) ? (redirect_to request.referrer) : (redirect_to root_path)
   end
 
   private

@@ -64,4 +64,6 @@ RSpec.configure do |config|
 
   # load all fixtures on test
   config.global_fixtures = :all
+
+  config.include Devise::Test::ControllerHelpers, type: :controller
 end

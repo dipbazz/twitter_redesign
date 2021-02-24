@@ -4,3 +4,10 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
+follow_user1_by_user2:
+  followed: user1
+  follower: user2
+
+follow_user2_by_user1:
+  followed: user2
+  follower: user1

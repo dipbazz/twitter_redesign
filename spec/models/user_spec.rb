@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe 'Invalid username' do
     it 'checks for unique username' do
-      # username dipesh is already in our fixture file
-      user = User.new(username: 'dipesh', email: 'test@mail.com', password: '123456')
+      # username user1 is already in our fixture file
+      user = User.new(username: 'user1', email: 'test@mail.com', password: '123456')
       expect(user.save).to be false
     end
 

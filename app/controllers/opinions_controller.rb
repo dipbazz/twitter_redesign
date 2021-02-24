@@ -4,8 +4,6 @@ class OpinionsController < ApplicationController
   def index
     @opinions = Opinion.all
     @opinion = Opinion.new
-    puts "$$$$$$$$$$$$$$$$$$$"
-    puts request.referrer
   end
 
   def new
