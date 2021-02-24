@@ -2,10 +2,12 @@
   <div class="d-flex align-items-center">
     <img src="https://via.placeholder.com/300" alt="user image" class="tweet-usr-img">
     <div class="d-inline-block ml-2 mr-5">
-      <h6 class="mb-0"><%= user.full_name %></h6>
-      <small class="">
-        <span class="text-muted">@<%= user.username %></span>
-      </small>
+      <%= link_to user_path(user), class: "text-dark text-decoration-none" do %>
+        <h6 class="mb-0"><%= user.full_name %></h6>
+        <small class="">
+          <span class="text-muted">@<%= user.username %></span>
+        </small>
+      <% end %>
     </div>
   </div>
   <%= follow_user_link user,  class: "btn btn-outline-primary py-0 px-3 font-weight-bold" %>

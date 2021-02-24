@@ -9,7 +9,7 @@
           </a>
         </li>
         <li class="nav-item my-2">
-          <a class="nav-link font-weight-bold active" href="#">
+          <a class="nav-link font-weight-bold active" href="/">
             <i class="icon pr-4 fas fa-home"></i>
             <span class="link-text d-none d-xl-inline-block">Home</span>
           </a>
@@ -45,10 +45,10 @@
           </a>
         </li>
         <li class="nav-item my-2">
-          <a class="nav-link font-weight-bold" href="#">
+          <%= link_to user_path(current_user), class: "nav-link font-weight-bold" do %>
             <i class="icon pr-4 far fa-user"></i>
             <span class="link-text d-none d-xl-inline-block">Profile</span>
-          </a>
+          <% end %>
         </li>
         <li class="nav-item my-2">
           <a class="nav-link font-weight-bold" href="#">
@@ -57,10 +57,10 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="btn btn-primary px-xl-5 font-weight-bold py-2" href="#">
+          <%= link_to new_opinion_path, class: "btn btn-primary px-xl-5 font-weight-bold py-2" do %>
             <i class="fas fa-pen-fancy d-xl-none"></i>
             <span class="d-none d-xl-block px-xl-4">Tweet</span>
-          </a>
+          <% end %>
         </li>
       </ul>
     </div>

@@ -19,6 +19,7 @@ module ApplicationHelper
     if current_user.id == user.id
       link_to('Edit Profile', '#', **options)
     elsif current_user.follows?(user)
+      options[:class] = options[:class].sub "-outline-", "-" if options[:class]
       link_to('Unfollow', unfollow_user_path(user), method: :post, **options)
     else
       link_to('Follow', follow_user_path(user), method: :post, **options)

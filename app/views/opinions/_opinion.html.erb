@@ -1,11 +1,15 @@
 <div class="card border-top-0 rounded-0 d-flex flex-row">
   <div class="p-2">
-    <img src="https://via.placeholder.com/300" alt="user image" class="tweet-usr-img mr-2">
+    <%= link_to user_path(opinion.user) do %>
+      <img src="https://via.placeholder.com/300" alt="user image" class="tweet-usr-img mr-2">
+    <% end %>
   </div>
   <div class="card-body py-2 pr-2 pl-0">
     <div class="card-title">
       <div class="d-inline-block">
-        <span><%= opinion.user.full_name %></span>
+        <%= link_to user_path(opinion.user), class: "text-dark" do %>
+          <span><%= opinion.user.full_name %></span>
+        <% end %>
         <small class="">
           <span class="text-muted">@<%= opinion.user.username %></span>
           <span class="text-muted">.</span>
