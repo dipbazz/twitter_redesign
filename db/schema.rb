@@ -10,17 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_19_100248) do
+ActiveRecord::Schema.define(version: 2021_02_24_090213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "followings", force: :cascade do |t|
-    t.bigint "follow_id", null: false
+    t.bigint "followed_id", null: false
     t.bigint "follower_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["follow_id"], name: "index_followings_on_follow_id"
+    t.index ["followed_id", "follower_id"], name: "index_followings_on_followed_id_and_follower_id", unique: true
+    t.index ["followed_id"], name: "index_followings_on_followed_id"
     t.index ["follower_id"], name: "index_followings_on_follower_id"
   end
 
@@ -49,7 +50,7 @@ ActiveRecord::Schema.define(version: 2021_02_19_100248) do
     t.index ["username"], name: "index_users_on_username"
   end
 
-  add_foreign_key "followings", "users", column: "follow_id"
+  add_foreign_key "followings", "users", column: "followed_id"
   add_foreign_key "followings", "users", column: "follower_id"
   add_foreign_key "opinions", "users"
 end

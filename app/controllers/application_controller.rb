@@ -14,6 +14,6 @@ class ApplicationController < ActionController::Base
   private
 
   def users_to_follow
-    @_users_to_follow ||= User.all
+    @_users_to_follow ||= User.where.not(id: current_user)
   end
 end

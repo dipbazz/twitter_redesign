@@ -6,9 +6,9 @@ class User < ApplicationRecord
 
   has_many :opinions
   has_many :followed_users, foreign_key: :follower_id, class_name: 'Following'
-  has_many :follows, through: :followed_users
+  has_many :follows, through: :followed_users, source: :followed
 
-  has_many :following_users, foreign_key: :follow_id, class_name: 'Following'
+  has_many :following_users, foreign_key: :followed_id, class_name: 'Following'
   has_many :followers, through: :following_users
 
   validates :username, presence: true, uniqueness: true, length: { minimum: 4 }
@@ -20,5 +20,9 @@ class User < ApplicationRecord
     elsif conditions.has_key?(:username)
       where(conditions.to_h).first
     end
+  end
+
+  def follows?(user)
+    self.follows.include?(user)
   end
 end
