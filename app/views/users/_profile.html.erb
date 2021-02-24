@@ -6,7 +6,7 @@
 
     <div class="usr-profile p-3 position-relative">
       <div class="clearfix">
-        <img src="https://via.placeholder.com/300" alt="user image" class="profile-img position-absolute">
+        <%= image_tag "profile.jpg", alt: @user.full_name, class: "profile-img position-absolute"%>
         <%= follow_user_link @user, class: "btn btn-outline-primary py-1 px-4 font-weight-bold float-right" %>
       </div>
 

@@ -1,7 +1,7 @@
 <div class="card border-left-0 border-right-0 border-top-0 rounded-0 d-flex flex-row">
   <div class="p-2">
     <%= link_to user_path(opinion.user) do %>
-      <img src="https://via.placeholder.com/300" alt="user image" class="tweet-usr-img mr-2">
+      <%= image_tag "profile.jpg", alt: opinion.user.full_name, class: "tweet-usr-img mr-2"%>
     <% end %>
   </div>
   <div class="card-body py-2 pr-2 pl-0">

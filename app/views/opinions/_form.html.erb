@@ -3,7 +3,7 @@
   <div class="d-flex">
     <div class="mr-2">
       <%= link_to user_path(current_user) do %>
-        <img src="https://via.placeholder.com/300" alt="user image" class="tweet-usr-img">
+        <%= image_tag "profile.jpg", alt: current_user.full_name, class: "tweet-usr-img"%>
       <% end %>
     </div>
     <%= form_for(@opinion, html: {class: "w-100 mr-2"}) do |f| %>
