@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, :set_user
 
   def show
+    @user = User.includes(:opinions).find(params[:id])
   end
 
   def follow
@@ -22,7 +23,7 @@ class UsersController < ApplicationController
     flash[:alert] = if @following.destroy
                       "You have unfollowed @#{@user.username}."
                     else
-                      'Something went wrong while trying to follow the user.'
+                      'Something went wrong while trying to unfollow the user.'
                     end
 
     redirect_to request.referrer
