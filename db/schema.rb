@@ -16,12 +16,12 @@ ActiveRecord::Schema.define(version: 2021_02_19_100248) do
   enable_extension "plpgsql"
 
   create_table "followings", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.bigint "follow_id", null: false
     t.bigint "follower_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["follow_id"], name: "index_followings_on_follow_id"
     t.index ["follower_id"], name: "index_followings_on_follower_id"
-    t.index ["user_id"], name: "index_followings_on_user_id"
   end
 
   create_table "opinions", force: :cascade do |t|
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2021_02_19_100248) do
     t.index ["username"], name: "index_users_on_username"
   end
 
-  add_foreign_key "followings", "users"
+  add_foreign_key "followings", "users", column: "follow_id"
   add_foreign_key "followings", "users", column: "follower_id"
   add_foreign_key "opinions", "users"
 end
