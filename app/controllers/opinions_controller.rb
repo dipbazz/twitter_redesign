@@ -2,12 +2,16 @@ class OpinionsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @opinions = Opinion.all.order('created_at DESC')
+    @opinions = Opinion.all
     @opinion = Opinion.new
   end
 
   def new
     @opinion = Opinion.new
+  end
+
+  def show
+    @opinion = Opinion.find(params[:id])
   end
 
   def create

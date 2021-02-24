@@ -27,9 +27,9 @@
         </div>
       </div>
     </div>
-    <a href="#" class="text-dark text-decoration-none">
+    <%= link_to opinion_path(opinion), class: "text-dark text-decoration-none" do %>
       <p class="card-text"><%= opinion.text %></p>
-    </a>
+    <% end %>
     <div class="card-foot mt-2 d-flex justify-content-between">
       <a href="#" class="card-link">
         <i class="far fa-comment"></i>

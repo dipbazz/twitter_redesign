@@ -1,0 +1,5 @@
+<ul class="list-group">
+  <% users.each do |user| %>
+    <%= render 'layouts/user_to_follow', user: user %>
+  <% end %>
+</ul>

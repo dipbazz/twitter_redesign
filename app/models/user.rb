@@ -13,6 +13,8 @@ class User < ApplicationRecord
 
   validates :username, presence: true, uniqueness: true, length: { minimum: 4 }
 
+  default_scope { order(created_at: :desc) }
+
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     if (login = conditions.delete(:username))
