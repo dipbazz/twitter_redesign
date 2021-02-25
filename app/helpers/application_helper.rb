@@ -19,7 +19,7 @@ module ApplicationHelper
     if current_user.id == user.id
       link_to('Edit Profile', '#', **options)
     elsif current_user.follows?(user)
-      options[:class] = options[:class].sub "-outline-", "-" if options[:class]
+      options[:class] = options[:class].sub '-outline-', '-' if options[:class]
       link_to('Unfollow', unfollow_user_path(user), method: :post, **options)
     else
       link_to('Follow', follow_user_path(user), method: :post, **options)
@@ -33,15 +33,15 @@ module ApplicationHelper
       link_to(
         opinion_likes_path(id: like.id, opinion_id: opinion),
         method: :delete,
-        class: "card-link like-btn text-danger"
+        class: 'card-link like-btn text-danger'
       ) do
-        content_tag(:i, "", class: "fas fa-heart icon") +
-        content_tag(:span, opinion.likes.count, class: "ml-2")
+        content_tag(:i, '', class: 'fas fa-heart icon') +
+          content_tag(:span, opinion.likes.count, class: 'ml-2')
       end
     else
-      link_to(opinion_likes_path(opinion),  method: :post, class: "card-link like-btn") do
-        content_tag(:i, "", class: "far fa-heart icon") +
-        content_tag(:span, opinion.likes.count, class: "ml-2")
+      link_to(opinion_likes_path(opinion), method: :post, class: 'card-link like-btn') do
+        content_tag(:i, '', class: 'far fa-heart icon') +
+          content_tag(:span, opinion.likes.count, class: 'ml-2')
       end
     end
   end

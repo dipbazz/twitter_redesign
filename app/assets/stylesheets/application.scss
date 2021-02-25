@@ -50,30 +50,6 @@ $light-gray : #f7f9fa;
   }
 }
 
-.like-btn {
-  &:hover {
-    .icon {
-      background-color: rgba(map-get($theme-colors, danger), 0.2);
-    }
-  }
-}
-
-.tweet-btn {
-  &:hover {
-    .icon {
-      background-color: rgba(map-get($theme-colors, success), 0.2);
-    }
-  }
-}
-
-.comment-btn {
-  &:hover {
-    .icon {
-      background-color: rgba(map-get($theme-colors, primary), 0.2);
-    }
-  }
-}
-
 .alert.position-fixed {
   left: 0;
   top: 0;
@@ -98,7 +74,9 @@ $light-gray : #f7f9fa;
     justify-content: center;
     align-items: center;
     position: relative;
+    /* stylelint-disable */
     background-image: image-url("../assets/twitter_banner.png");
+    /* stylelint-enable */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -161,6 +139,30 @@ $light-gray : #f7f9fa;
 
     &.fa-lg {
       font-size: 1.9rem;
+    }
+  }
+}
+
+.like-btn {
+  &:hover {
+    .icon {
+      background-color: rgba(map-get($theme-colors, danger), 0.2);
+    }
+  }
+}
+
+.tweet-btn {
+  &:hover {
+    .icon {
+      background-color: rgba(map-get($theme-colors, success), 0.2);
+    }
+  }
+}
+
+.comment-btn {
+  &:hover {
+    .icon {
+      background-color: rgba(map-get($theme-colors, primary), 0.2);
     }
   }
 }
@@ -251,7 +253,9 @@ $light-gray : #f7f9fa;
 // profile section styles
 .user-cover-img {
   height: 200px;
+  /* stylelint-disable */
   background-image: image-url('../assets/cover.jpg');
+  /* stylelint-enable */
   background-position: center;
   background-size: cover;
 }

@@ -27,7 +27,7 @@ RSpec.describe OpinionsController, type: :controller do
 
   describe 'create method' do
     it 'is success' do
-      post :create, params:  { opinion: { text: 'this is a test opinion.' } }
+      post :create, params: { opinion: { text: 'this is a test opinion.' } }
       expect(flash[:notice]).to eq('Your opinion has been created.')
     end
 

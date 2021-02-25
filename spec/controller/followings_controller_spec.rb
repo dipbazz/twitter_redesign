@@ -13,14 +13,14 @@ RSpec.describe FollowingsController, type: :controller do
 
     it 'redirects the unauthorize user' do
       sign_out(:user)
-      get :follower,  params: { user_id: users(:user1).id }
+      get :follower, params: { user_id: users(:user1).id }
       expect(response).to have_http_status(302)
     end
   end
 
   describe 'following method' do
     it 'is success' do
-      get :following,  params: { user_id: users(:user1).id }
+      get :following, params: { user_id: users(:user1).id }
       expect(response).to have_http_status 200
     end
   end

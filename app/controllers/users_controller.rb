@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       flash[:alert] = 'Something went wrong while trying to follow the user.'
     end
 
-    (request.referrer) ? (redirect_to request.referrer) : (redirect_to root_path)
+    request.referrer ? (redirect_to request.referrer) : (redirect_to root_path)
   end
 
   def unfollow
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
                       'Something went wrong while trying to unfollow the user.'
                     end
 
-    (request.referrer) ? (redirect_to request.referrer) : (redirect_to root_path)
+    request.referrer ? (redirect_to request.referrer) : (redirect_to root_path)
   end
 
   private
