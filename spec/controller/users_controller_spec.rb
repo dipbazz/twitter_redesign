@@ -41,4 +41,14 @@ RSpec.describe UsersController, type: :controller do
       expect(flash[:alert]).to eq('Something went wrong while trying to unfollow the user.')
     end
   end
+
+  describe 'follows?' do
+    it 'checks for followed user' do
+      expect(users(:user1).follows?(users(:user2))).to be true
+    end
+
+    it 'checks for unfollowed user' do
+      expect(users(:user1).follows?(users(:user3))).to be false
+    end
+  end
 end
