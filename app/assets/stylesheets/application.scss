@@ -75,7 +75,7 @@ $light-gray : #f7f9fa;
     align-items: center;
     position: relative;
     /* stylelint-disable */
-    background-image: image-url("../assets/twitter_banner.png");
+    background-image: asset-url("twitter_banner.png");
     /* stylelint-enable */
     background-position: center;
     background-size: cover;
@@ -254,7 +254,7 @@ $light-gray : #f7f9fa;
 .user-cover-img {
   height: 200px;
   /* stylelint-disable */
-  background-image: image-url('../assets/cover.jpg');
+  background-image: asset-url('cover.jpg');
   /* stylelint-enable */
   background-position: center;
   background-size: cover;
