@@ -31,21 +31,18 @@
       <p class="card-text"><%= opinion.text %></p>
     <% end %>
     <div class="card-foot mt-2 d-flex justify-content-between">
-      <a href="#" class="card-link">
-        <i class="far fa-comment"></i>
+      <a href="#" class="card-link comment-btn">
+        <i class="icon far fa-comment"></i>
         <span class="ml-2">2</span>
       </a>
-      <a href="#" class="card-link">
-        <i class="fas fa-retweet"></i>
+      <a href="#" class="card-link tweet-btn">
+        <i class="icon fas fa-retweet"></i>
         <span class="ml-2">2</span>
       </a>
-      <a href="#" class="card-link">
-        <i class="far fa-heart"></i>
-        <span class="ml-2">2</span>
-      </a>
+      <%= opinion_like_or_dislike_link opinion %>
       <span></span>
       <a href="#" class="card-link">
-        <i class="far fa-share-square"></i>
+        <i class="icon far fa-share-square"></i>
       </a>
       <span></span>
     </div>

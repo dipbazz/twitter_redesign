@@ -25,4 +25,24 @@ module ApplicationHelper
       link_to('Follow', follow_user_path(user), method: :post, **options)
     end
   end
+
+  def opinion_like_or_dislike_link(opinion)
+    like = Like.find_by(opinion: opinion, user: current_user)
+
+    if like
+      link_to(
+        opinion_likes_path(id: like.id, opinion_id: opinion),
+        method: :delete,
+        class: "card-link like-btn text-danger"
+      ) do
+        content_tag(:i, "", class: "fas fa-heart icon") +
+        content_tag(:span, opinion.likes.count, class: "ml-2")
+      end
+    else
+      link_to(opinion_likes_path(opinion),  method: :post, class: "card-link like-btn") do
+        content_tag(:i, "", class: "far fa-heart icon") +
+        content_tag(:span, opinion.likes.count, class: "ml-2")
+      end
+    end
+  end
 end

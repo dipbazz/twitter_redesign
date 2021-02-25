@@ -39,6 +39,39 @@ $light-gray : #f7f9fa;
 
 .card-link {
   color: #3e4a50;
+
+  .icon {
+    height: 35px;
+    width: 35px;
+    border-radius: 100px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.like-btn {
+  &:hover {
+    .icon {
+      background-color: rgba(map-get($theme-colors, danger), 0.2);
+    }
+  }
+}
+
+.tweet-btn {
+  &:hover {
+    .icon {
+      background-color: rgba(map-get($theme-colors, success), 0.2);
+    }
+  }
+}
+
+.comment-btn {
+  &:hover {
+    .icon {
+      background-color: rgba(map-get($theme-colors, primary), 0.2);
+    }
+  }
 }
 
 .alert.position-fixed {

@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  resources :opinions, only: [:index, :create, :new, :show]
+  resources :opinions, only: [:index, :create, :new, :show] do
+    resource :likes, only: [:create, :destroy]
+  end
   resources :users, only: [:show] do
     post 'follow', on: :member
     post 'unfollow', on: :member
