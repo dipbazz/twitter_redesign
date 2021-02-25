@@ -35,7 +35,11 @@ The features of this project are, user can:
 4. like or dislike the opinion.
 5. view other user profile and their follower and whom they followed.
 
+## Live Demo
 
+This project is hosted on heroku.
+
+[Live demo link](https://twitter-design.herokuapp.com/)
 ## Built With
 
 - Ruby v2.7.1
