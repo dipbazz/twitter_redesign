@@ -20,20 +20,24 @@
 
 ## About
 
-This project is about creating a twitter redesign.
+This project is about creating a twitter redesign. The screenshot of homepage of the project is as below.
 
 ![Screenshot of form](./app/assets/images/app_snap.png)
+
+The ER diagram used to create the model for this project is as below:
+
+![ER diagram for twitter redesign](./docs/er_diagram.png)
 
 ## Features
 
 The features of this project are, user can:
 
-1. register and login to the system
-2. follow or unfollow other user.
-3. create an opinion
-5. view all opinion.
+1. register and login to the application.
+2. follow or unfollow other users.
+3. create an opinion.
+5. view all opinions.
 4. like or dislike the opinion.
-5. view other user profile and their follower and whom they followed.
+5. view other user profile and their follower and following.
 
 ## Live Demo
 
@@ -75,6 +79,25 @@ Follow along the steps below to get a copy at your local machine.
 - Migrate the database on your local machine `rails db:migrate`
 - Run command `rails server`
 - Open browser at 'http://localhost:3000/'
+
+## Testing
+
+To test the project run the below cmd from your project root directory.
+```
+rspec
+
+OR
+
+rspec --format do
+```
+
+
+If you want to populate initial user data instead of creating it for manual testing you can run
+```
+rails db:seed
+```
+which will create default user with username starting from `user1` - `user8` with password: `Test@123`
+
 ## Authors
 
 👤 **Dipesh Bajgain**
