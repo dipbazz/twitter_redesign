@@ -6,16 +6,3 @@
     </label>
   </div>
 </form>
-
-<div class="my-2 following-list">
-
-  <ul class="list-group list-group-flush ">
-    <li class="list-group-item">
-      <h5 class="font-weight-bold mb-0">who to follow</h5>
-    </li>
-
-    <% users_to_follow.each do |user| %>
-      <%= render 'layouts/user_to_follow', user: user %>
-    <% end %>
-  </ul>
-</div>

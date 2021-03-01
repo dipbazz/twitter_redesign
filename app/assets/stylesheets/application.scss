@@ -21,8 +21,38 @@ $light-gray : #f7f9fa;
 
 @import 'bootstrap';
 
+.left-container {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+
+  @media screen and (min-width: 1200px) {
+    max-width: 220px;
+  }
+}
+
+.right-container {
+  top: 0;
+  bottom: 0;
+  right: 0;
+
+  @media screen and (min-width: 992px) {
+    max-width: 360px;
+  }
+}
+
 .center-container {
   min-height: 100vh;
+  margin-left: 100px;
+
+  @media screen and (min-width: 992px) {
+    margin-right: 360px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-left: 220px;
+  }
 }
 
 .btn {
@@ -124,6 +154,13 @@ $light-gray : #f7f9fa;
 // header and navbar styles
 .header {
   height: 100vh;
+
+  .usr-img {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 100px;
+  }
 }
 
 .nav-link {
@@ -131,7 +168,7 @@ $light-gray : #f7f9fa;
   display: flex;
 
   &:not(.active) {
-    color: #424040;
+    color: #bababa;
   }
 
   .icon {
@@ -173,22 +210,9 @@ $light-gray : #f7f9fa;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
-.dropup {
-  .dropdown-toggle {
-    &::after {
-      display: none;
-    }
-  }
-
-  .usr-img {
-    height: 40px;
-    width: 40px;
-    object-fit: cover;
-    border-radius: 100px;
-  }
-
-  .dropdown-menu.show {
-    border-radius: 20px;
+.dropdown-toggle {
+  &::after {
+    display: none;
   }
 }
 
@@ -252,7 +276,7 @@ $light-gray : #f7f9fa;
 
 // profile section styles
 .user-cover-img {
-  height: 200px;
+  height: 280px;
   /* stylelint-disable */
   background-image: asset-url('cover.jpg');
   /* stylelint-enable */
@@ -264,8 +288,6 @@ $light-gray : #f7f9fa;
   height: 140px;
   width: 140px;
   object-fit: cover;
-  border: 5px solid #fff;
-  top: -70px;
   border-radius: 100px;
 }
 

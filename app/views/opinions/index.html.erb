@@ -1,14 +1,20 @@
-<div class="nav position-sticky bg-white border-bottom main-nav z-index-10">
-  <h5 class="p-3 mb-0 font-weight-bold">Home</h5>
-</div>
 
-<div class="main-content bg-light">
-  <%= render 'form' %>
 
-  <div class="border-top">
-    <% @opinions.each do |opinion| %>
-      <%= render 'opinion', opinion: opinion %>
-    <% end %>
+<div class="p-0 border-left border-right center-container">
+  <div class="nav position-sticky bg-white border-bottom main-nav z-index-10">
+    <h5 class="p-3 mb-0 font-weight-bold">Home</h5>
   </div>
 
+  <div class="main-content bg-light">
+    <%= render 'form' %>
+
+    <div class="border-top">
+      <% @opinions.each do |opinion| %>
+        <%= render 'opinion', opinion: opinion %>
+      <% end %>
+    </div>
+
+  </div>
 </div>
+
+<%= render 'shared/right_section' %>

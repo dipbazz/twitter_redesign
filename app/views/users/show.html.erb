@@ -1,12 +1,17 @@
-<div class="nav position-sticky bg-white main-nav border-bottom z-index-10 px-3 py-1">
-  <h5 class="mb-1 font-weight-bold w-100"><%= @user.full_name %></h5>
-  <h6 class="text-muted d-block">
-    <small><%= @user.opinions.count %> <%= 'Tweet'.pluralize(@user.opinions.count) %></small>
-  </h6>
+
+<div class="p-0 border-left border-right center-container">
+  <div class="nav position-sticky bg-white main-nav border-bottom z-index-10 px-3 py-1">
+    <h5 class="mb-1 font-weight-bold w-100"><%= @user.full_name %></h5>
+    <h6 class="text-muted d-block">
+      <small><%= @user.opinions.count %> <%= 'Tweet'.pluralize(@user.opinions.count) %></small>
+    </h6>
+  </div>
+
+  <div class="main-content bg-light">
+    <%= render 'profile' %>
+
+    <%= render 'profile_content' %>
+  </div>
 </div>
 
-<div class="main-content bg-light">
-  <%= render 'profile' %>
-
-  <%= render 'profile_content' %>
-</div>
+<%= render 'right_section' %>

@@ -1,4 +1,4 @@
-<div class="card border-left-0 border-right-0 border-top-0 rounded-0 d-flex flex-row">
+<div class="card border-left-0 border-right-0 border-top-0 rounded-0 d-flex flex-row p-2">
   <div class="p-2">
     <%= link_to user_path(opinion.user) do %>
       <%= image_tag "profile.jpg", alt: opinion.user.full_name, class: "tweet-usr-img mr-2"%>
@@ -41,6 +41,7 @@
       </a>
       <%= opinion_like_or_dislike_link opinion %>
       <span></span>
+      <span class="d-none d-lg-block"></span>
       <a href="#" class="card-link">
         <i class="icon far fa-share-square"></i>
       </a>
