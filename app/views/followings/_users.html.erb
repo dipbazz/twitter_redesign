@@ -1,5 +1,4 @@
 <ul class="list-group list-group-flush">
-  <% users.each do |user| %>
-    <%= render 'shared/user_to_follow', user: user %>
-  <% end %>
+
+  <%= render partial: 'shared/user', collection: users %>
 </ul>

@@ -1,4 +1,12 @@
 module ApplicationHelper
+  def yield_based_on_user_authentication
+    if user_signed_in?
+      render partial: 'layouts/only_for_logged_in'
+    else
+      render partial: 'layouts/not_logged_in'
+    end
+  end
+
   def alert_class
     return 'alert-success' if flash[:notice]
 

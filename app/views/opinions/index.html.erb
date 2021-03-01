@@ -9,9 +9,8 @@
     <%= render 'form' %>
 
     <div class="border-top">
-      <% @opinions.each do |opinion| %>
-        <%= render 'opinion', opinion: opinion %>
-      <% end %>
+      <%= render @opinions %>
+
     </div>
 
   </div>

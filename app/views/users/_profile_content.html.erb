@@ -15,9 +15,7 @@
   </ul>
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="opinion" role="tabpanel" aria-labelledby="opinion-tab">
-      <% @user.opinions.each do |opinion| %>
-        <%= render 'opinions/opinion', opinion: opinion %>
-      <% end %>
+      <%= render @user.opinions %>
     </div>
   </div>
 </div>

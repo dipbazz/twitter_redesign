@@ -6,8 +6,6 @@
       <h5 class="font-weight-bold mb-0">Followed by</h5>
     </li>
 
-    <% @user.followers.each do |user| %>
-      <%= render 'shared/user_to_follow', user: user %>
-    <% end %>
+    <%= render partial: 'shared/user', collection: @user.followers %>
   </ul>
 </div>
