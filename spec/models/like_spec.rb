@@ -10,4 +10,14 @@ RSpec.describe Like, type: :model do
     like = Like.new(user: users(:user1), opinion: opinions(:opinion1))
     expect(like.save).to be false
   end
+
+  describe 'associations' do
+    it 'should belong to user' do
+      should belong_to(:user)
+    end
+
+    it 'should belong to opinion' do
+      should belong_to(:opinion)
+    end
+  end
 end

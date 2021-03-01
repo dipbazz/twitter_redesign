@@ -19,4 +19,14 @@ RSpec.describe Opinion, type: :model do
       expect(opinion.save).to be true
     end
   end
+
+  describe 'associations' do
+    it 'should have many likes' do
+      should have_many(:likes).dependent(:destroy)
+    end
+
+    it 'should belong to user' do
+      should belong_to(:user)
+    end
+  end
 end
