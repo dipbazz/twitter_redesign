@@ -75,6 +75,7 @@ Follow along the steps below to get a copy at your local machine.
 - Navigate to the directory where you want this project to clone and then clone it `git clone https://github.com/dipbazz/twitter_redesign.git`
 - Navigate to the `twitter_redesign` directory
 - install the gem package with `bundle install`
+- install yarn packages with `yarn install`
 - Create your database `rails db:create`
 - Migrate the database on your local machine `rails db:migrate`
 - Run command `rails server`
