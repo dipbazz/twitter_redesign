@@ -68,18 +68,75 @@ If you intend to download the project, you will need to have
 
     For installing postgresql [follow this link](http://postgresguide.com/setup/install.html)
 
+
 ### Installation instructions
 
 Follow along the steps below to get a copy at your local machine.
 
-- Navigate to the directory where you want this project to clone and then clone it `git clone https://github.com/dipbazz/twitter_redesign.git`
+- Navigate to the directory where you want this project to clone and then clone it
+
+    ```
+    git clone https://github.com/dipbazz/twitter_redesign.git
+    ```
+
 - Navigate to the `twitter_redesign` directory
-- install the gem package with `bundle install`
-- install yarn packages with `yarn install`
-- Create your database `rails db:create`
-- Migrate the database on your local machine `rails db:migrate`
-- Run command `rails server`
-- Open browser at 'http://localhost:3000/'
+
+    ```
+    cd twitter_redesign
+    ```
+
+- Setup credentials for cloudinary account for image upload feature.
+
+    ```
+    EDITOR="code --wait" bin/rails credentials:edit
+    ```
+
+    use the choice of your editor in my case I am
+    using vscode to edit credentials file.
+    To use command line editor like `nano` or `vim` remove `--wait` flag. Example:
+
+    ```
+    EDITOR="nano" bin/rails credentials:edit
+    ```
+
+    Update the `credentials.yml.enc` with your details from cloudinary account.
+
+    ```
+    CLOUDINARY:
+        NAME: your_cloudinary_name
+        API_KEY: cloudinary_key
+        API_SECRET: cloudinary_secret_key
+    ```
+
+- install the gem package
+
+    ```
+    bundle install
+    ```
+
+- install yarn packages
+    ```
+    yarn install
+    ```
+
+- Create your database
+    ```
+    rails db:create
+    ```
+
+- Migrate the database
+
+    ```
+    rails db:migrate
+    ```
+
+- Start your server
+
+    ```
+    rails server
+    ```
+
+- Open browser at http://localhost:3000/
 
 ## Testing
 
@@ -89,7 +146,7 @@ rspec
 
 OR
 
-rspec --format do
+rspec --format doc
 ```
 
 
