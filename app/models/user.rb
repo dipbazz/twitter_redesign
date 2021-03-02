@@ -8,7 +8,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-has_many :opinions, dependent: :nullify
+  has_many :opinions, dependent: :nullify
   has_many :followed_users, foreign_key: :follower_id, class_name: 'Following'
   has_many :follows, through: :followed_users, source: :followed, dependent: :destroy
 
