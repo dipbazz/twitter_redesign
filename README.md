@@ -6,6 +6,8 @@
 
 - [About](#about)
 - [Features](#features)
+- [Live Demo](#live-demo)
+- [Presentation](#presentation)
 - [Built with](#built-with)
 - [Getting started](#getting-started)
   * [Prerequisites](#prerequisites)
@@ -44,6 +46,10 @@ The features of this project are, user can:
 This project is hosted on heroku.
 
 [Live demo link](https://twitter-design.herokuapp.com/)
+
+## Presentation
+
+I have explained the proeject with its features in this [video presenatation](https://www.loom.com/share/8d44c13bb86245d7a8746779aeb4934d)
 ## Built With
 
 - Ruby v2.7.1
