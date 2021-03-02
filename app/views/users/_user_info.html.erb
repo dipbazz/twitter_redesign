@@ -1,6 +1,6 @@
     <div class="usr-profile w-100 text-center d-flex flex-column align-items-center">
       <div class="">
-        <%= image_tag "profile.jpg", alt: @user.full_name, class: "profile-img d-block mb-3"%>
+        <%= image_tag @user.photo ? @user.photo_url : "profile.jpg", alt: @user.full_name, class: "profile-img d-block mb-3"%>
         <%= follow_user_link @user, class: "btn btn-outline-primary py-1 px-4 font-weight-bold" %>
       </div>
 

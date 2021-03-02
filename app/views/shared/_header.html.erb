@@ -1,7 +1,7 @@
 <header class="header pb-3 d-flex justify-content-between flex-column">
   <div class="mt-4">
     <div class="d-flex align-items-center">
-      <%= image_tag "profile.jpg", alt: current_user.full_name, class: "usr-img d-inline-block mr-1" %>
+      <%= image_tag current_user.photo ? current_user.photo_url : "profile.jpg", alt: current_user.full_name, class: "usr-img d-inline-block mr-1" %>
       <div class="d-none d-xl-inline-block">
         <span class="d-block name font-weight-bold"><%= current_user.full_name %></span>
         <span class="username text-muted">@<%= current_user.username %></span>

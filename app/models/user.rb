@@ -1,10 +1,14 @@
 class User < ApplicationRecord
+  # include image uploader to upload image
+  include ImageUploader::Attachment(:photo)
+  include ImageUploader::Attachment(:cover_image)
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :opinions
+has_many :opinions, dependent: :nullify
   has_many :followed_users, foreign_key: :follower_id, class_name: 'Following'
   has_many :follows, through: :followed_users, source: :followed, dependent: :destroy
 

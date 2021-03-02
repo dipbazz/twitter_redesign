@@ -10,7 +10,13 @@
   <div class="main-content bg-light">
     <div class="tweet-form bg-white">
       <div class="">
-        <div class="user-cover-img">
+        <div
+          class="user-cover-img"
+          <% if @user.cover_image %>
+            style="background-image: url(<%= @user.cover_image_url %>)"
+          <% else %>
+            style="background-image: url(<%= asset_path 'cover.jpg' %>)"
+          <% end %>">
         </div>
 
       </div>

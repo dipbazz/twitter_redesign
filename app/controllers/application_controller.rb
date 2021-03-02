@@ -6,9 +6,11 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     added_attrs = %i[username full_name email password password_confirmation remember_me]
+    update_attrs = added_attrs.dup
+    update_attrs += ["photo", "cover_image"]
     devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
     devise_parameter_sanitizer.permit :sign_in, keys: %i[username password]
-    devise_parameter_sanitizer.permit :account_update, keys: added_attrs
+    devise_parameter_sanitizer.permit :account_update, keys: update_attrs
   end
 
   private

@@ -132,6 +132,11 @@ $light-gray : #f7f9fa;
     transform: translateY(-50%);
     transition: 0.2s all;
     padding-left: 0.75rem;
+
+    &.active {
+      top: 5px;
+      transform: none;
+    }
   }
 
   .form-control {
@@ -277,9 +282,6 @@ $light-gray : #f7f9fa;
 // profile section styles
 .user-cover-img {
   height: 280px;
-  /* stylelint-disable */
-  background-image: asset-url('cover.jpg');
-  /* stylelint-enable */
   background-position: center;
   background-size: cover;
 }
