@@ -1,0 +1,51 @@
+<div class="card border-left-0 border-right-0 border-top-0 rounded-0 d-flex flex-row p-2">
+  <div class="p-2">
+    <%= link_to user_path(opinion.user) do %>
+      <%= image_tag opinion.user.photo ? opinion.user.photo_url : "profile.jpg", alt: opinion.user.full_name, class: "tweet-usr-img mr-2"%>
+    <% end %>
+  </div>
+  <div class="card-body py-2 pr-2 pl-0">
+    <div class="card-title">
+      <div class="d-inline-block">
+        <%= link_to user_path(opinion.user), class: "text-dark" do %>
+          <span><%= opinion.user.full_name %></span>
+        <% end %>
+        <small class="">
+          <span class="text-muted">@<%= opinion.user.username %></span>
+          <span class="text-muted">.</span>
+          <span class="text-muted"><%= time_ago_in_words(opinion.created_at) %></span>
+        </small>
+      </div>
+      <div class="d-inline-block float-right dropleft">
+        <a href="#" class="dropdown-toggle card-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-ellipsis-h"></i>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div>
+    </div>
+    <%= link_to opinion_path(opinion), class: "text-dark text-decoration-none" do %>
+      <p class="card-text"><%= opinion.text %></p>
+    <% end %>
+    <div class="card-foot mt-2 d-flex justify-content-between">
+      <a href="#" class="card-link comment-btn">
+        <i class="icon far fa-comment"></i>
+        <span class="ml-2">2</span>
+      </a>
+      <a href="#" class="card-link tweet-btn">
+        <i class="icon fas fa-retweet"></i>
+        <span class="ml-2">2</span>
+      </a>
+      <%= opinion_like_or_dislike_link opinion %>
+      <span></span>
+      <span class="d-none d-lg-block"></span>
+      <a href="#" class="card-link">
+        <i class="icon far fa-share-square"></i>
+      </a>
+      <span></span>
+    </div>
+  </div>
+</div>

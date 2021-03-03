@@ -1,0 +1,324 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+$theme-colors: (
+  "primary": #39a2f2
+);
+
+$light-gray : #f7f9fa;
+
+@import 'bootstrap';
+
+.left-container {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+
+  @media screen and (min-width: 1200px) {
+    max-width: 220px;
+  }
+}
+
+.right-container {
+  top: 0;
+  bottom: 0;
+  right: 0;
+
+  @media screen and (min-width: 992px) {
+    max-width: 360px;
+  }
+}
+
+.center-container {
+  min-height: 100vh;
+  margin-left: 100px;
+
+  @media screen and (min-width: 992px) {
+    margin-right: 360px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-left: 220px;
+  }
+}
+
+.btn {
+  border-radius: 100px;
+}
+
+.z-index-10 {
+  z-index: 10;
+}
+
+.card:hover {
+  background-color: #fafafa;
+}
+
+.card-link {
+  color: #3e4a50;
+
+  .icon {
+    height: 35px;
+    width: 35px;
+    border-radius: 100px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.alert.position-fixed {
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.authentication {
+  height: 50vh;
+
+  @media screen and (min-width: 768px) {
+    height: 100vh;
+  }
+
+  .row {
+    height: inherit;
+  }
+
+  &-left {
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* stylelint-disable */
+    background-image: asset-url("twitter_banner.png");
+    /* stylelint-enable */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &::before {
+      content: '\f099';
+      position: absolute;
+      font-family: "Font Awesome 5 Brands", sans-serif;
+      font-weight: 400;
+      font-size: 25rem;
+      color: #fff;
+    }
+  }
+
+  &-right {
+    height: inherit;
+  }
+}
+
+.authentication-form {
+  .form-label {
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.2s all;
+    padding-left: 0.75rem;
+
+    &.active {
+      top: 5px;
+      transform: none;
+    }
+  }
+
+  .form-control {
+    height: unset;
+    padding-top: 1.8rem;
+    border-width: 2px;
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &:focus ~ .form-label,
+    &:valid ~ .form-label {
+      top: 5px;
+      transform: none;
+    }
+  }
+}
+
+// header and navbar styles
+.header {
+  height: 100vh;
+
+  .usr-img {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 100px;
+  }
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  display: flex;
+
+  &:not(.active) {
+    color: #bababa;
+  }
+
+  .icon {
+    font-size: 1.4rem;
+
+    &.fa-lg {
+      font-size: 1.9rem;
+    }
+  }
+}
+
+.like-btn {
+  &:hover {
+    .icon {
+      background-color: rgba(map-get($theme-colors, danger), 0.2);
+    }
+  }
+}
+
+.tweet-btn {
+  &:hover {
+    .icon {
+      background-color: rgba(map-get($theme-colors, success), 0.2);
+    }
+  }
+}
+
+.comment-btn {
+  &:hover {
+    .icon {
+      background-color: rgba(map-get($theme-colors, primary), 0.2);
+    }
+  }
+}
+
+.dropdown-menu.show {
+  display: block;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-toggle {
+  &::after {
+    display: none;
+  }
+}
+
+.dropleft {
+  .dropdown-toggle {
+    &::before {
+      display: none;
+    }
+  }
+}
+// main content styles
+.main-nav {
+  top: 0;
+}
+
+.tweet-usr-img {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+}
+
+.tweet-input {
+  outline: none;
+}
+
+// who to follow section
+.search-form {
+  .search-label {
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: gray;
+  }
+
+  .search-input {
+    background-color: darken($light-gray, 5);
+    border-radius: 100px;
+    border: 1px solid transparent;
+
+    &:focus {
+      outline: none;
+      border: 1px solid map-get($theme-colors, primary);
+
+      ~ .search-label {
+        color: map-get($theme-colors, primary);
+      }
+    }
+  }
+}
+
+.following-list {
+  .list-group {
+    border-radius: 15px;
+  }
+
+  .list-group-item {
+    background-color: $light-gray;
+    padding: 0.8rem;
+  }
+}
+
+// profile section styles
+.user-cover-img {
+  height: 280px;
+  background-position: center;
+  background-size: cover;
+}
+
+.profile-img {
+  height: 140px;
+  width: 140px;
+  object-fit: cover;
+  border-radius: 100px;
+}
+
+.profile-content {
+  .nav-item {
+    flex: 1;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .nav-link {
+    border: none;
+    border-radius: 0;
+    margin-bottom: 0;
+    background: transparent;
+    font-size: 1rem;
+    font-weight: 500;
+    width: 100%;
+    justify-content: center;
+
+    &:hover {
+      background-color: rgba(map-get($theme-colors, primary), 0.1);
+      border-bottom: 2px solid rgba(map-get($theme-colors, primary), 0.1);
+      color: map-get($theme-colors, primary);
+    }
+
+    &.active {
+      border-bottom: 2px solid map-get($theme-colors, primary);
+      color: map-get($theme-colors, primary);
+    }
+  }
+}

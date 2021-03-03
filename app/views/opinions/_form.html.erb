@@ -1,0 +1,17 @@
+<div class="tweet-form border-bottom mb-2 bg-white p-2">
+
+  <div class="d-flex">
+    <div class="mr-2">
+      <%= link_to user_path(current_user) do %>
+        <%= image_tag current_user.photo ? current_user.photo_url : "profile.jpg", alt: current_user.full_name, class: "tweet-usr-img"%>
+      <% end %>
+    </div>
+    <%= form_for(@opinion, html: {class: "w-100 mr-2"}) do |f| %>
+      <%= f.text_area :text, rows: 2, placeholder: "What's happening?", class: "tweet-input w-100 border-0 py-2 pr-2", required: true %>
+      <hr>
+      <div class="text-right">
+        <%= f.submit "Tweet", class: "btn btn-primary px-3 font-weight-bold py-2 text-right" %>
+      </div>
+    <% end %>
+  </div>
+</div>

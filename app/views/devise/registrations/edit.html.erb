@@ -1,0 +1,85 @@
+<div class="p-0 border-left border-right center-container">
+  <div class="nav position-sticky bg-white main-nav border-bottom z-index-10 px-3 py-1">
+    <h5 class="mb-1 font-weight-bold w-100">Edit your account</h5>
+    <h6 class="text-muted d-block">
+      <small>Make changes and submit your profile.</small>
+    </h6>
+  </div>
+
+  <div class="main-content p-4">
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "authentication-form" }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="form-group position-relative">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", required: true %>
+          <%= f.label :email, class: "form-label position-absolute" %>
+        </div>
+
+        <div>
+          <% if resource.photo %>
+            <%= image_tag resource.photo_url, height: "150", class: 'mb-3 d-inline-block' %>
+          <% end %>
+          <div class="form-group position-relative <%= 'd-inline-block' if resource.photo %>">
+            <%= f.file_field :photo, class: "form-control" %>
+            <%= f.label :photo, class: "form-label position-absolute active" %>
+          </div>
+        </div>
+
+        <div>
+          <% if resource.cover_image %>
+            <%= image_tag resource.cover_image_url, height: "150", class: 'mb-3 d-inline-block' %>
+          <% end %>
+          <div class="form-group position-relative <%= 'd-inline-block' if resource.cover_image %>">
+            <%= f.file_field :cover_image, class: "form-control" %>
+            <%= f.label :cover_image, class: "form-label position-absolute active" %>
+          </div>
+        </div>
+
+        <div class="form-group position-relative">
+          <%= f.text_field :full_name, class: "form-control", required: true %>
+          <%= f.label :full_name, class: "form-label position-absolute" %>
+        </div>
+
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
+
+        <div class="form-group position-relative">
+          <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "********" %>
+          <%= f.label :password, class: "form-label position-absolute" %>
+          <i>(leave blank if you don't want to change it)</i>
+          <% if @minimum_password_length %>
+            <br />
+            <em><%= @minimum_password_length %> characters minimum</em>
+          <% end %>
+        </div>
+
+        <div class="form-group position-relative">
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "********" %>
+          <%= f.label :password_confirmation, class: "form-label position-absolute" %>
+        </div>
+
+        <div class="form-group position-relative">
+          <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control", required: true %>
+          <%= f.label :current_password, class: "form-label position-absolute" %>
+          <i>(we need your current password to confirm your changes)</i><br />
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Update", class: "btn btn-primary px-5" %>
+        </div>
+      <% end %>
+
+      <hr>
+      <div>
+        <h3>Cancel my account</h3>
+
+        <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-outline-danger" %></p>
+      </div>
+
+  </div>
+</div>
+
+<%= render 'shared/right_section' %>

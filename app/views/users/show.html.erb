@@ -1,0 +1,29 @@
+
+<div class="p-0 border-left border-right center-container">
+  <div class="nav position-sticky bg-white main-nav border-bottom z-index-10 px-3 py-1">
+    <h5 class="mb-1 font-weight-bold w-100"><%= @user.full_name %></h5>
+    <h6 class="text-muted d-block">
+      <small><%= @user.opinions.count %> <%= 'Tweet'.pluralize(@user.opinions.count) %></small>
+    </h6>
+  </div>
+
+  <div class="main-content bg-light">
+    <div class="tweet-form bg-white">
+      <div class="">
+        <div
+          class="user-cover-img"
+          <% if @user.cover_image %>
+            style="background-image: url(<%= @user.cover_image_url %>)"
+          <% else %>
+            style="background-image: url(<%= asset_path 'cover.jpg' %>)"
+          <% end %>">
+        </div>
+
+      </div>
+    </div>
+
+    <%= render 'profile_content' %>
+  </div>
+</div>
+
+<%= render 'right_section' %>

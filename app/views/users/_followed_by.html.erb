@@ -1,0 +1,11 @@
+
+<div class="my-2 following-list">
+
+  <ul class="list-group list-group-flush ">
+    <li class="list-group-item">
+      <h5 class="font-weight-bold mb-0">Followed by</h5>
+    </li>
+
+    <%= render partial: 'shared/user', collection: @user.followers %>
+  </ul>
+</div>
